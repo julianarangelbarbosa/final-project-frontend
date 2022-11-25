@@ -6,7 +6,7 @@ import styled from "styled-components";
 function Footer() {
   return (
     <StyledFooter>
-      <p>© 2022 Ironhack. All Rights Reserved</p>
+      <p>© 2022 JB. All Rights Reserved. WEB Contact: Juliana Barbosa</p>
     </StyledFooter>
   );
 }

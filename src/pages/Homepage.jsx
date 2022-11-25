@@ -3,7 +3,7 @@ import React from "react";
 import stock1 from "../assets/stock1.png";
 
 /* Import Your Files Below This Line*/
-import {StyledSection} from '../components/styled/Section.styled'
+import { StyledSection } from "../components/styled/Section.styled";
 
 function HomePage() {
   return (
@@ -14,7 +14,8 @@ function HomePage() {
         <img src="stock3"></img>
         <article>
           <h2>
-          Find information about: Traditional Banks, Digital Banks and Broker in Brazil
+            Find information about: Traditional Banks, Digital Banks and Broker
+            in Brazil
           </h2>
         </article>
       </div>

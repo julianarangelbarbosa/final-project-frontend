@@ -13,8 +13,8 @@ function App() {
       
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/api/signup" element={<Signup />} />
-      </Routes>
+        <Route path="/signup" element={<Signup/>}/> 
+        </Routes>
       <Footer />
     </div>
   );
