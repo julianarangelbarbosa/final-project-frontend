@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import {NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import {useLocation } from "react-router-dom";
+
 //import logo from 'assets/logo.jpg;'
 
 /* Import Your Files Below This Line*/
@@ -16,44 +18,21 @@ function NavBar() {
   return (
     <StyledNavBar>
       <ul>
-        <li>
-          <NavLink to={"/"} className={url === "/" ? "active" : ""}>
-            <h3>Home</h3>
-          </NavLink>
-        </li>
-
-        <li>
-          <NavLink to={"/styled"} className={url === "/styled" ? "active" : ""}>
-            <h3>Information</h3>
-          </NavLink>
-        </li>
-
+      <h2 className="active">InfoMoney Site</h2>
+      <button className="active2"> <h4>Brazil Finance</h4></button>
+      <button className="active2"> <h4>Signup</h4> </button>
+      <button className="active2"> <h4>Login</h4> </button>
+      
       </ul>
-
-      <NavLink to={"/login"}>
-        <button>
-          <h3>Login</h3>
-        </button>
-      </NavLink>
-      <NavLink to={"/signup"}>
-        <button>
-          <h3>Signup</h3>
-        </button>
-      </NavLink>
     </StyledNavBar>
   );
 }
 
 const StyledNavBar = styled.nav`
-height: 7vh;  
-background-color: #ff5959;
+height: 15vh;  
+background-color: white;
 display: flex;
-justify-content: space-between;
 align-items: center;
-
-img{
-  height: 5vh;
-}
 
 ul{
   list-style: none;
@@ -61,19 +40,36 @@ ul{
   align-items: center;
 }
 
-li{
-  margin-right:2vh;
-}
-
-a{
-  text-decoration: none;
-  color: white;
-}
-
-a:hover,
 .active{
   color: black;
+  font-size: xx-large;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+  margin-left: 0px;
+
 }
+
+
+
+.active2{
+  height: 5vh; 
+  color: black;
+  font-size: smaller;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: center;
+  margin-left: 180px;
+  margin-right: 30px;
+  cursor: pointer;
+  border-radius:5px;
+}
+
 `;
 
 export default NavBar;
