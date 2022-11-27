@@ -1,23 +1,27 @@
 import React from "react";
-//import previewImg from "../assets/fotobank1";
-import stock1 from "../assets/stock1.png";
-
+import stock from "../assets/stock1.png";
+import stock1 from "../assets/stock3.png";
+import news from "../assets/news.jpg";
+import bank from "../assets/bank_list.jpg";
+/* Import Your Files Below This Line*/
 /* Import Your Files Below This Line*/
 import { StyledSection } from "../components/styled/Section.styled";
 
 function HomePage() {
   return (
+    
     <StyledSection>
       <div>
-        <img src="stock1"></img>
-        <img src="stock2"></img>
-        <img src="stock3"></img>
-        <article>
-          <h2>
-            Find information about: Traditional Banks, Digital Banks and Broker
-            in Brazil
-          </h2>
-        </article>
+        <img className="image1" src={news} alt="Result Preview" />
+        <h2>News aaaaaa</h2>
+      </div>
+      <div>
+        <img className="image2" src={bank} alt="Result Preview" />
+        <h2>Bank List aaaaaa</h2>
+      </div>
+      <div>
+        <img className="image3" src={stock1} alt="Result Preview" />
+        <h2>Broker List aaaaaa</h2>
       </div>
     </StyledSection>
   );

@@ -13,9 +13,13 @@ function Footer() {
 
 const StyledFooter = styled.footer`
 height: 5vh;
-background-color: #676fa3;
+background-color: #0e76a8;
 display: flex;
 align-items: center;
+bottom: 0;
+position: fixed;
+width: 100%;
+text-align: center;
 
 p{
   color: white;

@@ -1,38 +1,46 @@
 import styled from "styled-components";
 
 export const StyledSection = styled.section`
-    height: 88vh;
-    background-color: #EEF2FF;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .image1 {
+    height: 25vh;
+    width: 35vh;
+    margin-right: 100px;
+    margin-left: 100px;
+    border-radius: 8px;
+  }
+
+  .image2 {
+    height: 25vh;
+    width: 40vh;
+    margin-right: 100px;
+    margin-left: 100px;
+    border-radius: 8px;
+  }
+
+  .image3 {
+    height: 25vh;
+    width: 31vh;
+    margin-right: 100px;
+    margin-left: 100px;
+    border-radius: 8px;
+  }
+  h2 {
+    background-color: rgba(175, 189, 217, 0.7);
+    border-radius: 15px;
+    height: 10vh;
     display: flex;
-    align-items: center; 
-    justify-content: center;
-
-    img{
-        height: 30vh;
-    }
-
-    div{
-        background-color: rgba(175,189,217,0.7);
-        border-radius: 20px;
-        padding: 15vh 10vw 15vh 10vw;
-        display: flex;
-    }
-
-    article{
-        height: 30vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-left: 10vh;
-    }
-
-    h2{
-        display: flex;
-        flex-wrap: wrap;
-        width: 40vw;
-        color: white;
-        text-align: center;
-        margin: 0px;
-
-    }
-`
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 100px;
+    margin-left: 100px;
+    font-size: medium
+    
+  }
+`;
