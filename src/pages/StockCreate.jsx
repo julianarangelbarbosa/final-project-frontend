@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Row, Card, Col, Button } from "antd";
 
-/*
 function StockCreate() {
   const [stock, setStock] = useState("");
   const [close, setClose] = useState("");
@@ -21,15 +20,15 @@ function StockCreate() {
 
   const getStock = async () => {
     try {
-     const response = await axios.get(
-       `${}/stock/list/${id}` // duvida
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}/stock/list/${id}`
       );
 
       // response.data = {title, description}
-      setStock(response.data.name);
-      setClose(response.data.description);
-      setChange(response.data.rate);
-      setSector(response.data.site);
+      setStock(response.data.stock);
+      setClose(response.data.close);
+      setChange(response.data.change);
+      setSector(response.data.sector);
 
       console.log(response.data);
     } catch (error) {
@@ -46,12 +45,8 @@ function StockCreate() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      /// duvida
-      await axios.put(`${xxx}/stock/list/${id}`, {
-        stock,
-        close,
-        change,
-        sector,
+      await axios.post(`${process.env.REACT_APP_API_URL}/stock/create`, {
+        stock: stock, close: close, change:change, sector: sector
       });
 
       // clear the inputs
@@ -61,7 +56,7 @@ function StockCreate() {
       setSector("");
 
       // redirect to the details view
-      navigate(`/stock/list/${id}`);
+      navigate(`/stock/list`);
     } catch (error) {
       console.log(error);
     }
@@ -69,7 +64,7 @@ function StockCreate() {
 
   const deleteStock = async () => {
     try {
-      await axios.delete(`${xxx}/stock/list/${id}`); /////
+      await axios.delete(`${process.env.REACT_APP_API_URL}/stock/list/${id}`);
       navigate("/stock/list");
     } catch (error) {
       console.log(error);
@@ -77,18 +72,18 @@ function StockCreate() {
   };
 
   return (
-    <div className="EditStockPage">
-      <h3>Create Stock</h3>
+    <div className="EditSoftPage">
+      <h3>Create Soft</h3>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name</label>
-        <input type="text" name="name" value={name} onChange={handleStock} />
+        <label htmlFor="stock">Name Stock</label>
+        <input type="text" name="stock" value={stock} onChange={handleStock} />
 
         <p>
-          <label htmlFor="close">Close</label>
+          <label htmlFor="close">Close rate</label>
           <input
             type="number"
-            name="rate"
-            value={rate}
+            name="close"
+            value={close}
             onChange={handleClose}
           />
         </p>
@@ -96,10 +91,10 @@ function StockCreate() {
         <p>
           <label htmlFor="change">Change</label>
           <input
-            type="number"
-            name="number"
-            value={number}
-            onChange={setChange}
+            type="text"
+            name="change"
+            value={change}
+            onChange={handleChange}
           />
         </p>
 
@@ -114,11 +109,8 @@ function StockCreate() {
         </p>
         <button type="submit">Add Stock</button>
       </form>
-*/
-     // {/*Delete the project*/}
-  //    <button onClick={deleteBank}> Delete Stock</button>
-  //  </div>
-  //);
-//}
+    </div>
+  );
+}
 
-// export default StockCreate;
+export default StockCreate;

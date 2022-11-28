@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { Row, Card, Col, Button } from "antd";
+import Search from "antd/es/transfer/search";
 
 function BankList() {
   const [bank, setBank] = useState(null);
@@ -26,9 +27,35 @@ function BankList() {
     getBank();
   }, []);
 
+  /// Variaveis ligadas ao Search
+  const [banks, setBanks] = useState(null);
+  const [showBank, setShowBank] = useState(null);
+
+  const createBank = (bank) => {
+    const newBank = [bank, ...banks];
+    setBanks(newBank);
+    setShowBank(newBank);
+  };
+
+  const filterBank = (searchQuery) => {
+    let filteredBank = banks.filter((bank) =>
+      bank.name_bank.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    setShowBank(filteredBank);
+  };
+
   return (
     <div>
-      <Link to={`/bank/create/`}> Create a New Bank Folder</Link>
+      <Link to={`/bank/create/`}>
+        {" "}
+        <button> Create Bank</button>
+      </Link>
+      <Link to={`/`}>
+        {" "}
+        <button> Go to HomePage</button>
+      </Link>
+      <Search filterBank={filterBank} />
       <Row>
         {bank &&
           bank.map((banks) => (

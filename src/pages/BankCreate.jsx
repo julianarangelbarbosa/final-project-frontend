@@ -10,6 +10,7 @@ function BankCreate() {
   const [rate, setRate] = useState("");
   const [site, setSite] = useState("");
   const [channel, setChannel] = useState("");
+  const [logo, setLogo] = useState("");
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -19,6 +20,7 @@ function BankCreate() {
   const handleRate = (e) => setRate(e.target.value);
   const handleSite = (e) => setSite(e.target.value);
   const handleChannel = (e) => setChannel(e.target.value);
+  const handleLogo = (e) => setLogo(e.target.value);
 
   const getBank = async () => {
     try {
@@ -32,7 +34,7 @@ function BankCreate() {
       setRate(response.data.rate);
       setSite(response.data.site);
       setChannel(response.data.channel);
-
+      setLogo(response.data.logo);
       console.log(response.data);
     } catch (error) {
       console.log(error);
@@ -48,12 +50,13 @@ function BankCreate() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`${process.env.REACT_APP_API_URL}/bank/list/${id}`, {
-        name,
-        description,
-        rate,
-        site,
-        channel,
+      await axios.post(`${process.env.REACT_APP_API_URL}/bank/create`, {
+        name_bank: name,
+        description_bank: description,
+        rate_bank: rate,
+        site_bank: site,
+        youtube_bank: channel,
+        logo_bank: logo,
       });
 
       // clear the inputs
@@ -62,9 +65,10 @@ function BankCreate() {
       setRate("");
       setSite("");
       setChannel("");
+      setLogo("");
 
       // redirect to the details view
-      navigate(`/bank/list/${id}`);
+      navigate(`/bank/list`);
     } catch (error) {
       console.log(error);
     }
@@ -81,50 +85,45 @@ function BankCreate() {
 
   return (
     <div className="EditBankPage">
-        <h3>CreateBank</h3>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Name</label>
-          <input type="text" name="name" value={name} onChange={handleTitle} />
+      <h3>CreateBank</h3>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="name">Name</label>
+        <input type="text" name="name" value={name} onChange={handleTitle} />
 
-          <p>
-            <label htmlFor="description">Description</label>
-            <textarea
-              nam="description"
-              value={description}
-              cols="20"
-              rows="1"
-              onChange={handleDescription}
-            ></textarea>
-          </p>
-          <p>
-            <label htmlFor="rate">Rate</label>
-            <input
-              type="number"
-              name="rate"
-              value={rate}
-              onChange={handleRate}
-            />
-          </p>
+        <p>
+          <label htmlFor="description">Description</label>
+          <textarea
+            nam="description"
+            value={description}
+            cols="20"
+            rows="1"
+            onChange={handleDescription}
+          ></textarea>
+        </p>
+        <p>
+          <label htmlFor="rate">Rate</label>
+          <input type="number" name="rate" value={rate} onChange={handleRate} />
+        </p>
 
-          <p>
-            <label htmlFor="site">Site</label>
-            <input type="text" name="site" value={site} onChange={handleSite} />
-          </p>
+        <p>
+          <label htmlFor="site">Site</label>
+          <input type="text" name="site" value={site} onChange={handleSite} />
+        </p>
 
-          <p>
-            <label htmlFor="channel">Channel</label>
-            <input
-              type="text"
-              name="channel"
-              value={channel}
-              onChange={handleChannel}
-            />
-          </p>
-          <button type="submit">Add Bank</button>
-        </form>
+        <p>
+          <label htmlFor="channel">Channel</label>
+          <input
+            type="text"
+            name="channel"
+            value={channel}
+            onChange={handleChannel}
+          />
+        </p>
+        <button type="submit">Add Bank</button>
+      </form>
 
-        {/*Delete the project*/}
-        <button onClick={deleteBank}> Delete Bank</button>
+      {/*Delete the project*/}
+      <button onClick={deleteBank}> Delete Bank</button>
     </div>
   );
 }

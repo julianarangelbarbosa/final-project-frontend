@@ -35,6 +35,8 @@ function NavBar() {
           <h4>Login</h4>
         </button>
       </Link>
+
+
     </StyledNavBar>
   );
 }

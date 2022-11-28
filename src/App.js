@@ -9,24 +9,37 @@ import BankCreate from "./pages/BankCreate";
 import { Routes, Route } from "react-router-dom";
 import EditBankStock from "./pages/Comment";
 import StockList from "./pages/StockList";
+import StockCreate from "./pages/StockCreate";
+
+
 
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <iframe width="100%" height="1%" src="https://rss.app/embed/v1/ticker/tXBw2HRHnJDSw2Pr" frameborder="0"></iframe>
- 
+      <iframe
+        width="100%"
+        height="1%"
+        src="https://rss.app/embed/v1/ticker/tXBw2HRHnJDSw2Pr"
+        frameborder="0"
+      ></iframe>
+
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/signup" element={<Signup/>}/> 
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/bank/list" element={<BankList/>}/>
-        <Route path="/bank/create" element={<BankCreate/>}/>
-        <Route path="/comment/_id" element={<EditBankStock/>}/>
-        <Route path="/stock/list" element={<StockList/>}/>
-     
-        </Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+   
+        <Route path="/bank/list" element={<BankList />} />
+      
+        <Route path="/bank/create" element={<BankCreate />} />
+        <Route path="/comment/:id" element={<EditBankStock />} />
+      
+        <Route path="/stock/list" element={<StockList />} />
+      
+        <Route path="/stock/create" element={<StockCreate />} />
+      
+      </Routes>
       <Footer />
     </div>
   );

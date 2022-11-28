@@ -37,9 +37,17 @@
   }
 }
 
-.EditBankPage {
-
-
+.LoginPage 
+{
+ 
+ background-color: rgba(246, 248, 249, 0.913);
+ border-width: medium;
+ border-style: solid;
+ border-color:rgba(246, 248, 249, 0.913);
+ margin-left: 380px;
+ margin-right: 380px;
+ margin-top: -40px;
+ 
 }
 
 
