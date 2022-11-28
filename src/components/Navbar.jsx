@@ -1,49 +1,40 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import logomarca from "../assets/logo.jpg";
 import "react-widgets/styles.css";
+import { AuthContext } from "../contexts/auth.context";
 
-
-//import logo from 'assets/logo.jpg;'
-
-/* Import Your Files Below This Line*/
 import styled from "styled-components";
 
 function NavBar() {
-  /* Check Current Tab */
-  const location = useLocation();
-  const [url, setUrl] = useState(null);
-  useEffect(() => {
-    setUrl(location.pathname);
-  }, [location]);
+  /*   const {isLoggedIn, user} = useContext(AuthContext) */
 
   return (
     <StyledNavBar>
       <ul>
-        <img
-          className="active"
-          src={logomarca}
-          alt="InfoMoney Logo"
-          height="50vh"
-        />
+        <Link to={"/login"}>
+          <img
+            className="active"
+            src={logomarca}
+            alt="InfoMoney Logo"
+            height="50vh"
+          />
+        </Link>
+
         <h2 className="active">InfoMoney</h2>
-        </ul>
+      </ul>
 
-        <Link to="/signup">
-          <button className="active2">
-            {" "}
-            <h4>Signup</h4>{" "}
-          </button>
-        </Link>
+      <Link to="/signup">
+        <button className="active2">
+          <h4>Sign up</h4>
+        </button>
+      </Link>
 
-        <Link to="/login">
-          <button className="active2">
-            {" "}
-            <h4>Login</h4>{" "}
-          </button>
-        </Link>
-      
+      <Link to="/login">
+        <button className="active2">
+          <h4>Login</h4>
+        </button>
+      </Link>
     </StyledNavBar>
   );
 }
@@ -74,13 +65,15 @@ const StyledNavBar = styled.nav`
 
   .active2 {
     height: 5vh;
+    width: 12vh;
     font-size: smaller;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: center;
+    flex-wrap: center;
     align-items: center;
     align-content: center;
-    margin-right: 2vh;
+    margin-right: -121vh;
+    margin-left: 130vh;
     cursor: pointer;
     border-radius: 30px;
     border-style: none;

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { Row, Card, Col, Button } from "antd";
 
 function BankCreate() {
   const [name, setName] = useState("");
@@ -15,6 +16,9 @@ function BankCreate() {
 
   const handleTitle = (e) => setName(e.target.value);
   const handleDescription = (e) => setDescription(e.target.value);
+  const handleRate = (e) => setRate(e.target.value);
+  const handleSite = (e) => setSite(e.target.value);
+  const handleChannel = (e) => setChannel(e.target.value);
 
   const getBank = async () => {
     try {
@@ -77,35 +81,50 @@ function BankCreate() {
 
   return (
     <div className="EditBankPage">
-      <h3>CreateBank</h3>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name</label>
-        <input type="text" name="name" value={name} onChange={handleTitle} />
+        <h3>CreateBank</h3>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="name">Name</label>
+          <input type="text" name="name" value={name} onChange={handleTitle} />
 
-        <label htmlFor="description">Description</label>
-        <textarea
-          nam="description"
-          value={description}
-          cols="30"
-          rows="10"
-          onChange={handleDescription}
-        ></textarea>
+          <p>
+            <label htmlFor="description">Description</label>
+            <textarea
+              nam="description"
+              value={description}
+              cols="20"
+              rows="1"
+              onChange={handleDescription}
+            ></textarea>
+          </p>
+          <p>
+            <label htmlFor="rate">Rate</label>
+            <input
+              type="number"
+              name="rate"
+              value={rate}
+              onChange={handleRate}
+            />
+          </p>
 
-        <label htmlFor="rate">Rate</label>
-        <input type="text" name="rate" value={rate} onChange={handleTitle} />
+          <p>
+            <label htmlFor="site">Site</label>
+            <input type="text" name="site" value={site} onChange={handleSite} />
+          </p>
 
-        <label htmlFor="site">Site</label>
-        <input type="text" name="site" value={site} onChange={handleTitle} />
+          <p>
+            <label htmlFor="channel">Channel</label>
+            <input
+              type="text"
+              name="channel"
+              value={channel}
+              onChange={handleChannel}
+            />
+          </p>
+          <button type="submit">Add Bank</button>
+        </form>
 
-        <label htmlFor="channel">Channel</label>
-        <input type="text" name="channel" value={channel} onChange={handleTitle} />
-      
-        <button type="submit">Add Bank</button>
-      
-      </form>
-
-      {/*Delete the project*/}
-      <button onClick={deleteBank}> Delete Bank</button>
+        {/*Delete the project*/}
+        <button onClick={deleteBank}> Delete Bank</button>
     </div>
   );
 }

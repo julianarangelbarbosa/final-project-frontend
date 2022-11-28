@@ -7,6 +7,9 @@ import Login from "./pages/Login";
 import BankList from "./pages/BankList";
 import BankCreate from "./pages/BankCreate";
 import { Routes, Route } from "react-router-dom";
+import EditBankStock from "./pages/Comment";
+import StockList from "./pages/StockList";
+
 
 function App() {
   return (
@@ -20,6 +23,9 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/bank/list" element={<BankList/>}/>
         <Route path="/bank/create" element={<BankCreate/>}/>
+        <Route path="/comment/_id" element={<EditBankStock/>}/>
+        <Route path="/stock/list" element={<StockList/>}/>
+     
         </Routes>
       <Footer />
     </div>
