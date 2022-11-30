@@ -1,14 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import logomarca from "../assets/logo.jpg";
 import "react-widgets/styles.css";
-import { AuthContext } from "../contexts/auth.context";
 
 import styled from "styled-components";
 
 function NavBar() {
-  /*   const {isLoggedIn, user} = useContext(AuthContext) */
-
   return (
     <StyledNavBar>
       <ul>
@@ -21,21 +18,12 @@ function NavBar() {
           />
         </Link>
 
-        <h2 className="active">InfoMoney</h2>
+        <h2 className="active">Finance: Information on Social Media, Banks and Stock Exchange </h2>
+        
+        <button className="weather"> São Paulo 35°C / Lisbon 10°C</button>
+        
+      
       </ul>
-
-      <Link to="/signup">
-        <button className="active2">
-          <h4>Sign up</h4>
-        </button>
-      </Link>
-
-      <Link to="/login">
-        <button className="active2">
-          <h4>Login</h4>
-        </button>
-      </Link>
-
 
     </StyledNavBar>
   );
@@ -69,15 +57,16 @@ const StyledNavBar = styled.nav`
     height: 5vh;
     width: 12vh;
     font-size: smaller;
+    text-align: center;
     display: flex;
     flex-direction: center;
     flex-wrap: center;
     align-items: center;
     align-content: center;
-    margin-right: -121vh;
-    margin-left: 130vh;
+    margin-right: -1vh;
+    margin-left: 90vh;
     cursor: pointer;
-    border-radius: 30px;
+    border-radius: 10px;
     border-style: none;
   }
 `;

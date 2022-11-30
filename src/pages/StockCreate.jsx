@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { Row, Card, Col, Button } from "antd";
 
 function StockCreate() {
-  const [stock, setStock] = useState("");
+  const [name, setName] = useState("");
   const [close, setClose] = useState("");
   const [change, setChange] = useState("");
   const [sector, setSector] = useState("");
@@ -13,7 +13,7 @@ function StockCreate() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const handleStock = (e) => setStock(e.target.value);
+  const handleName = (e) => setName(e.target.value);
   const handleClose = (e) => setClose(e.target.value);
   const handleChange = (e) => setChange(e.target.value);
   const handleSector = (e) => setSector(e.target.value);
@@ -25,7 +25,7 @@ function StockCreate() {
       );
 
       // response.data = {title, description}
-      setStock(response.data.stock);
+      setName(response.data.stock);
       setClose(response.data.close);
       setChange(response.data.change);
       setSector(response.data.sector);
@@ -46,11 +46,11 @@ function StockCreate() {
     e.preventDefault();
     try {
       await axios.post(`${process.env.REACT_APP_API_URL}/stock/create`, {
-        stock: stock, close: close, change:change, sector: sector
+        stock: name, close, change, sector
       });
 
       // clear the inputs
-      setStock("");
+      setName("");
       setClose("");
       setChange("");
       setSector("");
@@ -72,14 +72,14 @@ function StockCreate() {
   };
 
   return (
-    <div className="EditSoftPage">
-      <h3>Create Soft</h3>
+    <div className="SignupPage">
+      <h2>Include Information</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="stock">Name Stock</label>
-        <input type="text" name="stock" value={stock} onChange={handleStock} />
+        <label htmlFor="name">Stock name: </label>
+        <input type="text" name="name" value={name} onChange={handleName} />
 
         <p>
-          <label htmlFor="close">Close rate</label>
+          <label htmlFor="close">Close rate: </label>
           <input
             type="number"
             name="close"
@@ -89,17 +89,7 @@ function StockCreate() {
         </p>
 
         <p>
-          <label htmlFor="change">Change</label>
-          <input
-            type="text"
-            name="change"
-            value={change}
-            onChange={handleChange}
-          />
-        </p>
-
-        <p>
-          <label htmlFor="sector">Sector</label>
+          <label htmlFor="sector">Company Sector: </label>
           <input
             type="text"
             name="sector"
@@ -107,7 +97,7 @@ function StockCreate() {
             onChange={handleSector}
           />
         </p>
-        <button type="submit">Add Stock</button>
+        <button type="submit">Add Information</button>
       </form>
     </div>
   );

@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../contexts/auth.context";
 
 function EditBankStock() {
   const [comments, setComments] = useState("");
-
+  const { user } = useContext(AuthContext);
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -32,9 +34,13 @@ function EditBankStock() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL}/comment/${id}`, {
-        comments,
-      });
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_URL}/comment/${id}/${user._id}`,
+        {
+          description_comment: comments,
+        }
+      );
+
       setComments("");
       navigate(`/bank/list`);
     } catch (error) {
@@ -52,19 +58,24 @@ function EditBankStock() {
   };
 
   return (
-    <div className="EditBankStock">
-      <h3>Edit Bank or Stock</h3>
+    <div className="SignupPage">
+      <h2>Comments: Bank and Stock</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="comments">Comments</label>
+        <label htmlFor="comments">Comments: </label>
         <textarea
           nam="comments"
           value={comments}
-          cols="30"
-          rows="10"
+          cols="20"
+          rows="1"
           onChange={handleComments}
         ></textarea>
-
+        <p></p>
         <button type="submit">Add Comments</button>
+        <p></p>
+        <Link to={"/"}>
+          {" "}
+          <button type="submit">Home Page </button>
+        </Link>
       </form>
     </div>
   );

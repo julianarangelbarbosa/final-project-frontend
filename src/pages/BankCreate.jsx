@@ -84,46 +84,26 @@ function BankCreate() {
   };
 
   return (
-    <div className="EditBankPage">
-      <h3>CreateBank</h3>
+    <div className="SignupPage">
+      <h2>Include Information</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">Name: </label>
         <input type="text" name="name" value={name} onChange={handleTitle} />
 
         <p>
-          <label htmlFor="description">Description</label>
-          <textarea
+          <label htmlFor="description">Description: </label>
+          <input
             nam="description"
             value={description}
-            cols="20"
-            rows="1"
+            cols="30"
+            rows="2"
             onChange={handleDescription}
-          ></textarea>
-        </p>
-        <p>
-          <label htmlFor="rate">Rate</label>
-          <input type="number" name="rate" value={rate} onChange={handleRate} />
-        </p>
-
-        <p>
-          <label htmlFor="site">Site</label>
-          <input type="text" name="site" value={site} onChange={handleSite} />
-        </p>
-
-        <p>
-          <label htmlFor="channel">Channel</label>
-          <input
-            type="text"
-            name="channel"
-            value={channel}
-            onChange={handleChannel}
           />
         </p>
-        <button type="submit">Add Bank</button>
+         
+        <button type="submit">Add Information</button>
       </form>
 
-      {/*Delete the project*/}
-      <button onClick={deleteBank}> Delete Bank</button>
     </div>
   );
 }

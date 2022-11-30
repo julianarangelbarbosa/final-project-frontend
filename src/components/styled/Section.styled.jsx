@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StyledSection = styled.section`
   height: auto;
   display: flex;
+  flex-direction: ;
   align-items: center;
   justify-content: center;
 
@@ -13,7 +14,6 @@ export const StyledSection = styled.section`
     margin-left: 100px;
     border-radius: 8px;
   }
-
   .image2 {
     height: 25vh;
     width: 40vh;
@@ -40,7 +40,36 @@ export const StyledSection = styled.section`
     align-items: center;
     margin-right: 100px;
     margin-left: 100px;
-    font-size: medium
-    
+    font-size: medium;
   }
+
+  .image4 {
+    height: 25vh;
+    width: 80vh;
+    margin-bottom: -10px;
+    margin-top: -180px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: stretch;
+ 
+  }
+
+  .image5 {
+    height: 25vh;
+    width: 80vh;
+    margin-bottom: -350px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: stretch;
+ 
+  }
+
 `;

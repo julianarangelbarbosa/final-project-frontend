@@ -42,24 +42,46 @@ function Login() {
   };
 
   return (
-    <div className="LoginPage">
+    <div className="SignupPage">
       <h2>Login</h2>
 
       <form onSubmit={handleLoginSubmit}>
-        <label>Email:  </label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+        <label>Email: </label>
+        <input
+          type="email"
+          name="email"
+          placeholder="a@email.com"
+          value={email}
+          onChange={handleEmail}
+        />
+
+        <p></p>
+        <label>Password: </label>
+        <input
+          type="password"
+          name="password"
+          placeholder="*******"
+          value={password}
+          onChange={handlePassword}
+        />
+
+        <p></p>
+        <button type="submit">Login Page</button>
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
         
         <p></p>
-        <label>Password:  </label>
-        <input type="password" name="password" value={password} onChange={handlePassword}/>
-        
+        <Link to={"/signup"}>
+          {" "}
+          <button type="submit">Signup Page </button>
+        </Link>
+
         <p></p>
-        <button type="submit">Login</button>
+        <Link to={"/"}>
+          {" "}
+          <button type="submit">Home Page </button>
+        </Link>
+
       </form>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
-      <p></p>
-        <Link to={"/"}> <button type="submit">HomePage </button></Link>
-      
     </div>
   );
 }

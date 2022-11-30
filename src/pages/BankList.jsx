@@ -27,46 +27,44 @@ function BankList() {
     getBank();
   }, []);
 
-  /// Variaveis ligadas ao Search
-  const [banks, setBanks] = useState(null);
-  const [showBank, setShowBank] = useState(null);
-
-  const createBank = (bank) => {
-    const newBank = [bank, ...banks];
-    setBanks(newBank);
-    setShowBank(newBank);
-  };
-
-  const filterBank = (searchQuery) => {
-    let filteredBank = banks.filter((bank) =>
-      bank.name_bank.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-
-    setShowBank(filteredBank);
-  };
+  
 
   return (
     <div>
+     <h3>Visualize the Tradicional and Digital Bank in Brazil. </h3>
+     <h3>Choose it Bank help you to manage your earnings!!!</h3>
+     
+      <div className="CreatePage">
+      <p></p>
       <Link to={`/bank/create/`}>
         {" "}
-        <button> Create Bank</button>
+        <button> Include Information</button>
       </Link>
       <Link to={`/`}>
         {" "}
-        <button> Go to HomePage</button>
+        <button> HomePage</button>
       </Link>
-      <Search filterBank={filterBank} />
-      <Row>
+      <p></p>
+      <Link to={`/profile`}>
+        {" "}
+        <button>Profile</button>
+      </Link>
+      <p></p>
+      <Search className="begin"></Search>
+      </div>
+    
+      <Row className="list">
         {bank &&
           bank.map((banks) => (
             <Card>
               <li className="Bank Card" key={bank._id}>
+                <img src={banks.logo_bank} width="50%"/> 
                 <h3>{banks.name_bank}</h3>
                 <h4>
-                  <p>Description:{banks.description_bank}</p>
-                  <p>Rate:{banks.rate_bank}</p>
-                  <p>Site:{banks.site_bank}</p>
-                  <p>YouTube:{banks.youtube_bank}</p>
+                  <p>Description: {banks.description_bank}</p>
+                  <p>Rate: {banks.rate_bank}</p>
+                  <Link><p>{banks.site_bank}</p></Link>
+                  <Link><p>{banks.youtube_bank}</p> </Link>
                   <Link to={`/comment/${banks._id}`}>
                     <button> Add Comments</button>
                   </Link>
@@ -75,6 +73,7 @@ function BankList() {
             </Card>
           ))}
       </Row>
+     
     </div>
   );
 }

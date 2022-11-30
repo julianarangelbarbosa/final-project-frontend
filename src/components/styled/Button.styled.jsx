@@ -1,4 +1,4 @@
-import styled from "PROJECTFINAL-frontend";
+import styled from "styled-components";
 
 export const StyledButton = styled.button`
     border: none;

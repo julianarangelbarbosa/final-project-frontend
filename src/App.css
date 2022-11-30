@@ -37,17 +37,157 @@
   }
 }
 
-.LoginPage 
+
+.SignupPage {
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 1px solid red;
+  min-width: 1%;
+  height: 58vh;
+  border-style: double #F55A00 1vw;
+  margin-left: 35vw;
+  margin-right: 38vw;
+  margin-top: -5vw;
+  padding: 5vw ;
+  position:relative; 
+
+}
+
+.SignupPage h2 {
+
+  font-size: 25px ;
+  text-align: center;
+  color: #F55A00;
+  margin-top:-4vw;
+}
+
+.SignupPage button { 
+ 
+  color: red;
+  cursor: pointer;
+  border-color: rgb(243, 239, 239);
+  
+
+}
+
+.SignupPage input textarea 
 {
+  border-color: rgb(243, 239, 239);
+}
+
+.CreatePage {
+  padding: 0;
+  height: 1vh;
+  border-style: double #F55A00 1vw;
+  margin-left: 70vw;
+  margin-top: -6vw;
+  margin-bottom: 10vh;
+  padding: 5vw ;
+  position:center; 
+}
+
+.CreatePage button { 
  
- background-color: rgba(246, 248, 249, 0.913);
- border-width: medium;
- border-style: solid;
- border-color:rgba(246, 248, 249, 0.913);
- margin-left: 380px;
- margin-right: 380px;
- margin-top: -40px;
- 
+  color: red;
+  cursor: pointer;
+  border-color: rgb(243, 239, 239);
+
 }
 
 
+
+.ProfilePage
+{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 1px solid red;
+  min-width: 1%;
+  height: 58vh;
+  border-style: double #F55A00 1vw;
+  margin-left: 35vw;
+  margin-right: 38vw;
+  margin-top: -5vw;
+  padding: 5vw ;
+  position:relative; 
+
+}
+
+
+.ProfilePage h2 {
+
+  font-size: 25px ;
+  text-align: center;
+  color: #F55A00;
+  margin-top:-4vw;
+}
+
+.ProfilePage button { 
+ 
+  color: red;
+  cursor: pointer;
+  border-color: rgb(243, 239, 239);
+  
+
+}
+
+.begin{
+  text-align: center;
+  margin-left: 0vw;
+  margin-right: 10vw;
+  margin-top: -8vw;
+
+}
+
+.list {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+  
+
+}
+
+.list button {
+  color: rgb(131, 130, 130);
+  cursor: pointer;
+  border-color: rgb(243, 239, 239);
+}
+
+.image5 {
+  size:10%;
+}
+
+.SocialMedia {
+
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+  margin-bottom: 150px;
+  size:auto;
+}
+
+.SocialMedia h3 {
+
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.weather {
+margin-left: 200px;
+border-radius: 10px;
+border-color: grey;
+}
