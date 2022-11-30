@@ -3,11 +3,12 @@ import axios from "axios";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { AuthContext } from "../contexts/auth.context";
+import { Row, Card, Col, Button } from "antd";
 
 function Profile() {
   const { user, logoutUser } = useContext(AuthContext);
   const [profile, setProfile] = useState(null);
-
+  const { id } = useParams();
   const storedToken = localStorage.getItem("authToken");
   const navigate = useNavigate();
 
@@ -34,7 +35,19 @@ function Profile() {
       );
       setProfile(resp.data);
       logoutUser();
-      navigate("/login");
+      navigate("/profile");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const deleteComment = async (id) => {
+    try {
+      const response = await axios.delete(
+        `${process.env.REACT_APP_API_URL}/comment/${id}/${profile._id}`
+      );
+      console.log(response);
+      getUser();
     } catch (error) {
       console.log(error);
     }
@@ -42,25 +55,39 @@ function Profile() {
 
   useEffect(() => {
     getUser();
-  }, [user]);
+  }, []);
 
   return (
-    <div className="ProfilePage">
-      <h2>Profile</h2>
+    <div className="SignupPage">
+      <h2>User Profile: Welcome 😀 !!!</h2>
       {profile && (
         <>
-          <h3>Hi, {profile.username}</h3>
-          <h3>Email: {profile.email}</h3>
-          <h3>Comments:</h3>
-          {profile.comments.map((comment) =>{
-            return(
-              <div>
-              {comment.bankStockId && comment.bankStockId.name_bank && <p>{comment.bankStockId.name_bank}</p>}
-              {comment.bankStockId &&  comment.bankStockId.stock && <p>{comment.bankStockId.stock}</p>}
-              <p>{comment.description_comment}</p>
-              </div>
-            )
-          })}
+          <div>
+            <h3>Hello: {profile.username}</h3>
+            <p></p>
+            <h3>Email: {profile.email}</h3>
+            <p></p>
+            <h3>Personal Comments:</h3>
+
+            <Row className="comments">
+              {profile.comments.map((comment) => {
+                return (
+                  <div key={comment._id}>
+                    {comment.bankStockId && comment.bankStockId.name_bank && (
+                      <h3>{comment.bankStockId.name_bank}</h3>
+                    )}
+                    {comment.bankStockId && comment.bankStockId.stock && (
+                      <h3>{comment.bankStockId.stock}</h3>
+                    )}
+                    <p>{comment.description_comment}</p>
+                    <button onClick={() => deleteComment(comment._id)}>
+                      Delete Comment
+                    </button>
+                  </div>
+                );
+              })}
+            </Row>
+          </div>
         </>
       )}
       {/* <form>
@@ -70,18 +97,12 @@ function Profile() {
         <label>Email:</label>
         <input type="text" name="email" value={email} />
       </form> */}
-
+      <p></p>
+      <p></p>
       <Link to={"/"}>
         {" "}
         <button>HomePage</button>
       </Link>
-
-      <p></p>
-      <Link to={"/"}>
-        {" "}
-        <button>Edit Profile</button>
-      </Link>
-
       <p></p>
       <button onClick={logout}>Log Out</button>
     </div>

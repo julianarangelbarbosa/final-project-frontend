@@ -28,38 +28,26 @@ function StockList() {
 
   return (
     <div>
-      <h3 className="begin"> 
-      Visualize the Stocks and Cripto on the Brazilian Stock Exchange</h3>
-      <p> Choose choose stocks to get more dividends !!!</p>
-  
       <div className="CreatePage">
-      <p></p>
-      <Link to={`/`}>
-        {" "}
-        <button> HomePage</button>
-      </Link>
-      <p></p>
-      <Link to={`/profile`}>
-        {" "}
-        <button>Profile</button>
-      </Link>
-      <p></p>
-      <Search className="begin"></Search>
+        <Link to={`/`}>
+          <button> HomePage</button>
+        </Link>
+        <Link to={`/profile`}>
+          <button>Profile</button>
+        </Link>
+        <p></p>
       </div>
       <Row className="list">
         {stocks.map((stock) => {
           return (
             <Card>
-              <li className="Bank Card">
-                <img src={stock.logo}/>
+              <li>
+                <img src={stock.logo} />
                 <h4>
                   <p>Stock name: {stock.stock}</p>
                   <p>Close value in the last trading: R$ {stock.close}</p>
                   <p>Value change between trading sessions: % {stock.change}</p>
                   <p>Company Sector: {stock.sector}</p>
-                  <Link to={`/comment/${stock._id}`}>
-                    <button> Add Comments</button>
-                  </Link>
                 </h4>
               </li>
             </Card>

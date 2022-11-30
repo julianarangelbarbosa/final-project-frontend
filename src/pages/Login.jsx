@@ -47,6 +47,7 @@ function Login() {
 
       <form onSubmit={handleLoginSubmit}>
         <label>Email: </label>
+        <p></p>
         <input
           type="email"
           name="email"
@@ -57,6 +58,7 @@ function Login() {
 
         <p></p>
         <label>Password: </label>
+        <p></p>
         <input
           type="password"
           name="password"
@@ -68,7 +70,7 @@ function Login() {
         <p></p>
         <button type="submit">Login Page</button>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
-        
+
         <p></p>
         <Link to={"/signup"}>
           {" "}
@@ -80,7 +82,7 @@ function Login() {
           {" "}
           <button type="submit">Home Page </button>
         </Link>
-
+        <p></p>
       </form>
     </div>
   );

@@ -11,29 +11,31 @@ import { Row, Card, Col, Button } from "antd";
 
 function HomePage() {
   return (
+    <div>
     <StyledSection>
-      <div id="mainSec">
-      
-        <Link to={"/news/list"}>
-          <img className="image1" src={news} alt="Result Preview" />
-        </Link>
-        <h2>News about Brazil Finance</h2>
-      </div>
-      <div>
+    <Row>
+    <Card>
         <Link to={"/bank/list"}>
           <img className="image2" src={bank} alt="Result Preview" />
         </Link>
-        <h2>Analyse the Bank and Broker to manage your money</h2>
-      </div>
-      <div>
+        <h2>Bank and Broker</h2>
+        </Card>
+        <Card>
         <Link to={"/stock/list"}>
           <img className="image3" src={stock1} alt="Result Preview" />
         </Link>
-        <h2>Analyse the Stock Exchange in Brazil</h2>
-        
-      </div>
-      
+        <h2>Stocks Exchange</h2>
+        </Card>
+        <Card>
+        <Link to={"/news/list"}>
+          <img className="image1" src={news} alt="Result Preview" />
+        </Link>
+        <h2>Videos to learn about Finance</h2>
+        </Card>
+        </Row>
     </StyledSection>
+    </div>
+    
   );
 }
 

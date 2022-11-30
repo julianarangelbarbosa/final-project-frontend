@@ -18,19 +18,19 @@ function NavBar() {
           />
         </Link>
 
-        <h2 className="active">Finance: Information on Social Media, Banks and Stock Exchange </h2>
-        
-        <button className="weather"> São Paulo 35°C / Lisbon 10°C</button>
-        
-      
-      </ul>
+        <h2 className="active">
+          Finance: Information on Social Media, Banks and Stock Exchange{" "}
+        </h2>
 
+       
+      </ul>
     </StyledNavBar>
   );
 }
 
 const StyledNavBar = styled.nav`
   height: 12vh;
+  width: auto;
   background-color: #0e76a8;
   display: flex;
   align-items: center;
@@ -68,6 +68,14 @@ const StyledNavBar = styled.nav`
     cursor: pointer;
     border-radius: 10px;
     border-style: none;
+  }
+
+  .weather {
+    margin-left: 160px;
+    margin-top: 10px;
+    border-radius: 40px;
+    border-color: grey;
+    display: flex;
   }
 `;
 

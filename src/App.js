@@ -12,29 +12,9 @@ import StockList from "./pages/StockList";
 import StockCreate from "./pages/StockCreate";
 import Profile from "./pages/Profile";
 import News from "./pages/News";
-import React, {useState} from 'react';
+import React, { useState } from "react";
 
 function App() {
-
-/// Variaveis ligadas ao Search
-const [banks, setBanks] = useState(null);
-const [showBank, setShowBank] = useState(null);
-
-const createBank = (bank) => {
-  const newBank = [bank, ...banks];
-  setBanks(newBank);
-  setShowBank(newBank);
-};
-
-const filterBank = (searchQuery) => {
-  let filteredBank = banks.filter((bank) =>
-    bank.name_bank.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
-  setShowBank(filteredBank);
-};
-
-
   return (
     <div className="App">
       <NavBar />
@@ -54,8 +34,8 @@ const filterBank = (searchQuery) => {
         <Route path="/comment/:id" element={<EditBankStock />} />
         <Route path="/stock/list" element={<StockList />} />
         <Route path="/stock/create" element={<StockCreate />} />
-        <Route path="/profile" element={<Profile/>} />
-        <Route path="/news/list" element={<News/>} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/news/list" element={<News />} />
       </Routes>
       <Footer />
     </div>

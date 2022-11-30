@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { Row, Card, Col, Button } from "antd";
-import Search from "antd/es/transfer/search";
+import Search from "./Search";
 
 function BankList() {
   const [bank, setBank] = useState(null);
   const { id } = useParams();
+  const [showbank, setShowBank] = useState(null);
+
   const storedToken = localStorage.getItem("authToken");
   const getBank = async () => {
     try {
@@ -17,54 +19,59 @@ function BankList() {
         }
       );
       setBank(response.data);
-      console.log(response.data);
+      setShowBank(response.data);
+      /* console.log(response.data); */
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const filterBank = (searchQuery) => {
+    console.log(searchQuery);
+    let filteredBank = bank.filter((singlebank) =>
+      singlebank.name_bank.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setShowBank(filteredBank);
   };
 
   useEffect(() => {
     getBank();
   }, []);
 
-  
-
   return (
     <div>
-     <h3>Visualize the Tradicional and Digital Bank in Brazil. </h3>
-     <h3>Choose it Bank help you to manage your earnings!!!</h3>
+      {/* <Search className="begin"></Search> */}
      
       <div className="CreatePage">
-      <p></p>
-      <Link to={`/bank/create/`}>
-        {" "}
-        <button> Include Information</button>
-      </Link>
-      <Link to={`/`}>
-        {" "}
-        <button> HomePage</button>
-      </Link>
-      <p></p>
-      <Link to={`/profile`}>
-        {" "}
-        <button>Profile</button>
-      </Link>
-      <p></p>
-      <Search className="begin"></Search>
+      
+        <Link to={`/bank/create/`}>
+          <button> Include Information</button>
+        </Link>
+        <Link to={`/`}>
+          <button> HomePage</button>
+        </Link>
+        <Link to={`/profile`}>
+          <button>Profile</button>
+        </Link>
+        <Search filterBank={filterBank} />
       </div>
-    
+
       <Row className="list">
         {bank &&
-          bank.map((banks) => (
+          showbank.map((banks) => (
             <Card>
-              <li className="Bank Card" key={bank._id}>
-                <img src={banks.logo_bank} width="50%"/> 
+              <li key={bank._id}>
+                <img src={banks.logo_bank} width="50%" />
                 <h3>{banks.name_bank}</h3>
                 <h4>
                   <p>Description: {banks.description_bank}</p>
                   <p>Rate: {banks.rate_bank}</p>
-                  <Link><p>{banks.site_bank}</p></Link>
-                  <Link><p>{banks.youtube_bank}</p> </Link>
+                  <Link>
+                    <p>{banks.site_bank}</p>
+                  </Link>
+                  <Link>
+                    <p>{banks.youtube_bank}</p>{" "}
+                  </Link>
                   <Link to={`/comment/${banks._id}`}>
                     <button> Add Comments</button>
                   </Link>
@@ -73,7 +80,6 @@ function BankList() {
             </Card>
           ))}
       </Row>
-     
     </div>
   );
 }
