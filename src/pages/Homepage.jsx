@@ -18,14 +18,14 @@ function HomePage() {
         <Link to={"/bank/list"}>
           <img className="image2" src={bank} alt="Result Preview" />
         </Link>
-        <h2>Bank and Broker</h2>
+        <h2>Banks and Brokers</h2>
         </Card>
         <p></p>
         <Card>
         <Link to={"/stock/list"}>
           <img className="image3" src={stock1} alt="Result Preview" />
         </Link>
-        <h2>Stocks Exchange</h2>
+        <h2>Stock Exchange</h2>
         </Card>
         <p></p>
         <p></p>
@@ -33,7 +33,7 @@ function HomePage() {
         <Link to={"/news/list"}>
           <img className="image1" src={news} alt="Result Preview" />
         </Link>
-        <h2>Videos to learn about Finance</h2>
+        <h2>Finance Youtube Channel</h2>
         </Card>
         </Row>
     </StyledSection>
