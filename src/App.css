@@ -38,24 +38,21 @@
 }
 
 .SignupPage {
-
   padding: auto;
   border: 1px solid red;
-  width:45%;
+  width: 45%;
   height: auto;
   border-style: double #f55a00 1vw;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
   align-content: center;
-  margin-top: -50px;
- 
+  margin-top: -80px;
 }
 
 .SignupPage h2 {
   font-size: 25px;
   color: #f55a00;
   margin-top: -1px;
-
 }
 
 .SignupPage button {
@@ -63,14 +60,13 @@
   cursor: pointer;
   border-color: rgb(243, 239, 239);
   position: relative;
-  
+  width: auto;
 }
 
 .SignupPage input textarea {
   border-color: rgb(243, 239, 239);
   position: relative;
   display: flex;
-
 }
 
 .CreatePage {
@@ -95,6 +91,7 @@
   margin-left: 50px;
   margin-bottom: -11vh;
   position: relative;
+  width: auto;
 }
 
 .CreatePage h3 {
@@ -107,7 +104,6 @@
   position: relative;
 }
 
-
 .list {
   display: flex;
   flex-direction: row;
@@ -116,6 +112,7 @@
   align-items: center;
   align-content: center;
   display: flex;
+  margin-top: -50px;
 }
 
 .list button {
@@ -124,7 +121,6 @@
   border-color: rgb(243, 239, 239);
   display: flex;
   margin-left: 100px;
-
 }
 
 .image5 {
@@ -132,20 +128,17 @@
   display: flex;
 }
 
-
-
 .Video {
   display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
-	align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
   margin-top: 250px;
 }
 
 .ProfilePage {
-
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -159,7 +152,6 @@
   padding: 5vw;
   overflow: auto;
   display: flex;
-  
 }
 
 .ProfilePage h2 {
@@ -176,21 +168,50 @@
   display: flex;
 }
 
-
 .ProfilePageH3 {
-
   font-size: 18px;
   font-style: italic;
-  text-decoration:underline;
+
   display: flex;
- 
 }
 
 .comments {
   display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
-	align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+#searchField {
+  position: absolute;
+  top: 120px;
+}
+
+@media only screen and (max-width: 600px) {
+  .CreatePage {
+    padding: 0;
+    height: 1vh;
+    color: #f55a00;
+    border-style: double #f55a00 1vw;
+    padding: 5vw;
+    position: center;
+    display: flex;
+  }
+
+  .CreatePage button {
+    color: red;
+    cursor: pointer;
+    border-color: rgb(243, 239, 239);
+    display: flex;
+    margin-top: 50px;
+  }
+  #searchField {
+    position: absolute;
+    top: 185px;
+    left: 175px;
+  }
+  .list {
+    margin-top: 85px;
+  }
 }

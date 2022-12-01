@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledSection = styled.section`
   .image1 {
     height: 25vh;
-    width: 35vh;
+    width: 32vh;
     margin-right: 50px;
     margin-left: 50px;
     border-radius: 8px;
@@ -17,7 +17,7 @@ export const StyledSection = styled.section`
   }
   .image2 {
     height: 25vh;
-    width: 40vh;
+    width: 35vh;
     margin-right: 80px;
     margin-left: 50px;
     border-radius: 8px;
@@ -32,7 +32,7 @@ export const StyledSection = styled.section`
 
   .image3 {
     height: 25vh;
-    width: 31vh;
+    width: 30vh;
     margin-right: 100px;
     margin-left: 50px;
     border-radius: 8px;

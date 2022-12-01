@@ -41,11 +41,10 @@ function BankList() {
   return (
     <div>
       {/* <Search className="begin"></Search> */}
-     
+
       <div className="CreatePage">
-      
         <Link to={`/bank/create/`}>
-          <button> Include Information</button>
+          <button> Include Info</button>
         </Link>
         <Link to={`/`}>
           <button> HomePage</button>
@@ -53,25 +52,29 @@ function BankList() {
         <Link to={`/profile`}>
           <button>Profile</button>
         </Link>
-        <Search filterBank={filterBank} />
       </div>
+      <Search filterBank={filterBank} />
 
       <Row className="list">
         {bank &&
           showbank.map((banks) => (
             <Card>
-              <li key={bank._id}>
+              <li className="Bank Card" key={bank._id}>
                 <img src={banks.logo_bank} width="50%" />
                 <h3>{banks.name_bank}</h3>
                 <h4>
                   <p>Description: {banks.description_bank}</p>
                   <p>Rate: {banks.rate_bank}</p>
-                  <Link>
-                    <p>{banks.site_bank}</p>
-                  </Link>
-                  <Link>
-                    <p>{banks.youtube_bank}</p>{" "}
-                  </Link>
+                  <li key={banks}>
+                    <a href={"http://" + banks.site_bank} target="_blank">
+                      Website
+                    </a>
+                  </li>{" "}
+                  <li key={banks}>
+                    <a href={"http://" + banks.youtube_bank} target="_blank">
+                      Youtube Channel
+                    </a>
+                  </li>
                   <Link to={`/comment/${banks._id}`}>
                     <button> Add Comments</button>
                   </Link>

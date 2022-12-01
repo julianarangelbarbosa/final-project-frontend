@@ -10,7 +10,7 @@ function StockList() {
   const getfromAPIStock = async () => {
     try {
       const response = await axios.get(
-        `https://brapi.dev/api/quote/list?sortBy=volume&sortOrder=desc&limit=10`
+        `https://brapi.dev/api/quote/list?sortBy=volume&sortOrder=desc&limit=20`
         /* {
           headers: { Authorization: `Bearer ${storedToken}` },
         } */
@@ -45,8 +45,8 @@ function StockList() {
                 <img src={stock.logo} />
                 <h4>
                   <p>Stock name: {stock.stock}</p>
-                  <p>Close value in the last trading: R$ {stock.close}</p>
-                  <p>Value change between trading sessions: % {stock.change}</p>
+                  <p>Stock value in the last trading session: R$ {stock.close}</p>
+                  <p>Stock variation: % {stock.change}</p>
                   <p>Company Sector: {stock.sector}</p>
                 </h4>
               </li>

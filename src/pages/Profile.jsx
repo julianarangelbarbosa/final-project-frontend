@@ -103,8 +103,11 @@ function Profile() {
         {" "}
         <button>HomePage</button>
       </Link>
-      <p></p>
       <button onClick={logout}>Log Out</button>
+      <Link to={"/login"}>
+        <button>Login</button>
+      </Link>
+      <p></p>
     </div>
   );
 }

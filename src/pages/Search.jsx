@@ -12,8 +12,13 @@ function Search({ filterBank }) {
   console.log(filterBank);
   return (
     <div>
-      <h3 className="CreatePage"></h3>
-      <input type="text" value={query} placeholder="Search"  onChange={handleQuery} />
+      <input
+        id="searchField"
+        type="text"
+        value={query}
+        placeholder="🕵️ Search"
+        onChange={handleQuery}
+      />
     </div>
   );
 }

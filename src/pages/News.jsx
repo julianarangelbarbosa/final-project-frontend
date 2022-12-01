@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { StyledSection } from "../components/styled/Section.styled";
-import { Row, Card, Col, Button } from "antd";
 import { useState } from "react";
-import YouTube from "react-youtube";
+
+import Card from "react-bootstrap/Card";
 
 function News() {
   return (
@@ -17,39 +17,148 @@ function News() {
         <p></p>
       </Link>
 
-    
-        <Card className="Video">
+      <Card id = "someRandomID"
+        style={{
+          marginLeft: "-150px",
+          marginTop: "40px",
+          marginRight: "10px",
+          width: "100%",
+          height: "auto",
+          position: "relative",
+          display: "flex",
+        }}
+      >
+        <Card.Body>
+          <Card.Title></Card.Title>
           <iframe
-            src="https://www.youtube.com/embed/NEzYn3rNWVc"
+            width="250"
+            height="150"
+            src="https://www.youtube.com/embed/5etGcjdZweQ"
             frameborder="0"
           ></iframe>
 
+          <textarea name="description" cols="30" rows="2">
+            {" "}
+          </textarea>
+        </Card.Body>
+      </Card>
+      <Card
+        style={{
+          marginLeft: "10px",
+          marginTop: "40px",
+          width: "100%",
+          height: "auto",
+          position: "relative",
+          display: "flex",
+        }}
+      >
+        <Card.Body>
+          <Card.Title></Card.Title>
           <iframe
-            src="https://www.youtube.com/embed/4OXY8ZKfmXA"
+            width="250"
+            height="150"
+            src="https://www.youtube.com/embed/i1pzNg2NkJ4"
             frameborder="0"
           ></iframe>
 
+          <textarea name="description" cols="30" rows="2">
+            {" "}
+          </textarea>
+        </Card.Body>
+      </Card>
+      <Card
+        style={{
+          marginLeft: "10px",
+          marginTop: "40px",
+          width: "100%",
+          height: "auto",
+          position: "relative",
+          display: "flex",
+        }}
+      >
+        <Card.Body>
+          <Card.Title></Card.Title>
           <iframe
-            src="https://www.youtube.com/embed/ddNzswo3DGc"
+            width="250"
+            height="150"
+            src="https://www.youtube.com/embed/tzd6p9vCnMY"
             frameborder="0"
           ></iframe>
-
+          <textarea name="description" cols="30" rows="2">
+            {" "}
+          </textarea>
+        </Card.Body>
+      </Card>
+      <Card
+        style={{
+          marginLeft: "-870px",
+          marginTop: "250px",
+          marginRight: "10px",
+          width: "100%",
+          height: "auto",
+          position: "relative",
+          display: "flex",
+        }}
+      >
+        <Card.Body>
+          <Card.Title></Card.Title>
           <iframe
-            src="https://www.youtube.com/embed/W-8fDAJ9oGI"
+            width="250"
+            height="150"
+            src="https://www.youtube.com/embed/gJ7ZQxfP_dA"
             frameborder="0"
           ></iframe>
-
+          <textarea name="description" cols="30" rows="2">
+            {" "}
+          </textarea>
+        </Card.Body>
+      </Card>
+      <Card
+        style={{
+          marginLeft: "10px",
+          marginTop: "250px",
+          width: "100%",
+          height: "auto",
+          position: "relative",
+          display: "flex",
+        }}
+      >
+        <Card.Body>
+          <Card.Title></Card.Title>
           <iframe
-            src="https://www.youtube.com/embed/QxD9USj-bZY"
+            width="250"
+            height="150"
+            src="https://www.youtube.com/embed/gr0ASU0iaWs"
             frameborder="0"
           ></iframe>
-
+          <textarea name="description" cols="30" rows="2">
+            {" "}
+          </textarea>
+        </Card.Body>
+      </Card>
+      <Card
+        style={{
+          marginLeft: "10px",
+          marginTop: "250px",
+          width: "100%",
+          height: "auto",
+          position: "relative",
+          display: "flex",
+        }}
+      >
+        <Card.Body>
+          <Card.Title></Card.Title>
           <iframe
-            src="https://www.youtube.com/embed/tlNFvuMQ9Yc"
+            width="250"
+            height="150"
+            src="https://www.youtube.com/embed/ZJgO-vvmJD0"
             frameborder="0"
           ></iframe>
-        </Card>
-    
+          <textarea name="description" cols="30" rows="2">
+            {" "}
+          </textarea>
+        </Card.Body>
+      </Card>
     </div>
   );
 }

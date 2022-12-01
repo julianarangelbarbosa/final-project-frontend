@@ -20,12 +20,15 @@ function HomePage() {
         </Link>
         <h2>Bank and Broker</h2>
         </Card>
+        <p></p>
         <Card>
         <Link to={"/stock/list"}>
           <img className="image3" src={stock1} alt="Result Preview" />
         </Link>
         <h2>Stocks Exchange</h2>
         </Card>
+        <p></p>
+        <p></p>
         <Card>
         <Link to={"/news/list"}>
           <img className="image1" src={news} alt="Result Preview" />

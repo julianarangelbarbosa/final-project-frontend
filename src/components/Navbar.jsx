@@ -19,7 +19,7 @@ function NavBar() {
         </Link>
 
         <h2 className="active">
-          Finance: Information on Social Media, Banks and Stock Exchange{" "}
+          Brazil Finance: Information about Banks and Stock Exchange
         </h2>
 
        
@@ -29,11 +29,11 @@ function NavBar() {
 }
 
 const StyledNavBar = styled.nav`
+display: flex;
   height: 12vh;
   width: auto;
   background-color: #0e76a8;
-  display: flex;
-  align-items: center;
+  
 
   ul {
     list-style: none;

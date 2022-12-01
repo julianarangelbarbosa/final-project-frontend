@@ -32,7 +32,7 @@ function Signup(props) {
 
   return (
     <div className="SignupPage">
-      <h2>Signup</h2>
+      <h2>Signup 📝</h2>
 
       <form onSubmit={handleSignupSubmit}>
         <label>Username:  </label>

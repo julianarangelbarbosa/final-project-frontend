@@ -6,7 +6,7 @@ import styled from "styled-components";
 function Footer() {
   return (
     <StyledFooter>
-      <p>© 2022 JB. All Rights Reserved. WEB Contact: Juliana Barbosa</p>
+      <p>© 2022. All Rights Reserved. WebDev: Juliana Barbosa</p>
     </StyledFooter>
   );
 }

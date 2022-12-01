@@ -93,7 +93,7 @@ function BankCreate() {
         <p>
           <label htmlFor="description">Description: </label>
           <input
-            nam="description"
+            name="description"
             value={description}
             cols="30"
             rows="2"

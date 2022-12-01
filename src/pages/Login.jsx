@@ -43,7 +43,7 @@ function Login() {
 
   return (
     <div className="SignupPage">
-      <h2>Login</h2>
+      <h2>Login 📝</h2>
 
       <form onSubmit={handleLoginSubmit}>
         <label>Email: </label>
@@ -68,18 +68,14 @@ function Login() {
         />
 
         <p></p>
-        <button type="submit">Login Page</button>
+        <button type="submit">Login</button>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-        <p></p>
         <Link to={"/signup"}>
-          {" "}
           <button type="submit">Signup Page </button>
         </Link>
 
-        <p></p>
         <Link to={"/"}>
-          {" "}
           <button type="submit">Home Page </button>
         </Link>
         <p></p>

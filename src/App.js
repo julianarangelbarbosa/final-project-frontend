@@ -17,14 +17,14 @@ import React, { useState } from "react";
 function App() {
   return (
     <div className="App">
-      <NavBar />
+  <NavBar />
       <iframe
         width="100%"
         height="1%"
         src="https://rss.app/embed/v1/ticker/tXBw2HRHnJDSw2Pr"
         frameborder="0"
       ></iframe>
-
+    
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
