@@ -37,7 +37,7 @@ function News() {
             frameborder="0"
           ></iframe>
 
-          <textarea name="description" cols="30" rows="2">
+          <textarea name="description" cols="30" rows="2" color="grey" placeholder="obs.">
             {" "}
           </textarea>
         </Card.Body>
