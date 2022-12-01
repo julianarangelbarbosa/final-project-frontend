@@ -19,7 +19,7 @@ function NavBar() {
         </Link>
 
         <h2 className="active">
-          Information about Banks and Stock Exchange in Brazil
+          Information: Banks and Stock Exchange in Brazil
         </h2>
 
        
